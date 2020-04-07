@@ -7,13 +7,13 @@ let package = Package(
     platforms: [
         .macOS(.v10_13),
         .iOS(.v11),
-        .tvOS(.v11),
-        .watchOS(.v4)
     ],
     products: [
-        .library(name: "Nuke-WebP-Plugin", targets: ["Nuke-WebP-Plugin"])
+        .library(name: "Nuke-WebP-Plugin", targets: ["Nuke-WebP-Plugin iOS",
+                                                    "Nuke-WebP-Plugin macOS"])
     ],
     targets: [
-        .target(name: "Nuke-WebP-Plugin", path: "Sources")
+        .target(name: "Nuke-WebP-Plugin iOS", path: "Sources"),
+        .target(name: "Nuke-WebP-Plugin macOS", path: "Sources")
     ]
 )
